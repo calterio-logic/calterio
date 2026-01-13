@@ -1,0 +1,28 @@
+{
+  "name": "@calterio/uwds-core",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./tokens": "./tokens/index.ts",
+    "./components": "./components/index.ts",
+    "./diagrams": "./diagrams/index.ts",
+    "./tailwind": "./tailwind/config.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5.0.0"
+  }
+}
+

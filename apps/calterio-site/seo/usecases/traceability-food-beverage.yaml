@@ -1,0 +1,36 @@
+slug: traceability-food-beverage
+title: Traceability for Food & Beverage Manufacturing
+h1: Complete Traceability Architecture for Food & Beverage
+meta_description: Complete farm-to-fork traceability with automated data capture. Achieve 100% HACCP compliance and reduce product recalls by 50%.
+industry: Food & Beverage
+problem:
+  - Food safety and HACCP compliance requirements
+  - Manual traceability is error-prone
+  - Product recall management difficulties
+  - Short shelf-life product challenges
+solution:
+  - Complete farm-to-fork traceability
+  - Automated data capture at every stage
+  - Real-time temperature and quality monitoring
+  - Automated compliance tracking
+architecture_ref: tr-arch-v1
+workflow:
+  - Automated data capture from raw materials
+  - Real-time monitoring of processing parameters
+  - Complete product genealogy
+  - Automated compliance checking
+  - Rapid recall management
+kpis:
+  - 100% HACCP compliance
+  - 50% reduction in product recalls
+  - Complete traceability
+  - Improved food safety
+integrations:
+  - Quality management systems
+  - Cold chain monitoring
+  - Packaging systems
+cta: Request Architecture Walkthrough
+related_use_cases:
+  - quality-control-pharmaceutical
+  - energy-optimization-textile
+

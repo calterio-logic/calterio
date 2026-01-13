@@ -1,0 +1,36 @@
+slug: production-optimization-electronics
+title: Production Optimization for Electronics Manufacturing
+h1: Production Optimization Architecture for Electronics Facilities
+meta_description: Optimize production scheduling and reduce cycle times by 20-25% in electronics manufacturing. Workflow orchestration with real-time bottleneck identification.
+industry: Electronics
+problem:
+  - Suboptimal production schedules
+  - Bottlenecks and underutilization
+  - Missed delivery dates
+  - Rapid changeover requirements
+solution:
+  - Workflow orchestration with optimization engine
+  - Digital Twin for scenario testing
+  - Real-time bottleneck identification
+  - Automatic schedule adjustment
+architecture_ref: po-arch-v1
+workflow:
+  - Real-time production monitoring
+  - Bottleneck identification
+  - Schedule optimization
+  - Digital Twin scenario testing
+  - Automatic schedule adjustment
+kpis:
+  - 10-15% increase in throughput
+  - 20-25% reduction in cycle times
+  - Better resource utilization
+  - 98% on-time delivery
+integrations:
+  - Production planning systems
+  - ERP systems
+  - Equipment controllers
+cta: Request Architecture Walkthrough
+related_use_cases:
+  - energy-optimization-textile
+  - multi-vendor-integration-pharmaceutical
+

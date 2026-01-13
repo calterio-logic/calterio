@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark theme base styles - CSS Variables for compatibility */
+:root {
+  --calterio-orange: #F28B24;
+  --calterio-red: #E10209;
+  --calterio-dark-blue: #131A47;
+  --background: #0B0F14;
+  --surface: #121826;
+  --text-primary: #E5E7EB;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+  --border-default: #1F2937;
+  --border-muted: #374151;
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border-default;
+  }
+  
+  body {
+    @apply bg-background text-text-primary antialiased;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold text-text-primary;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+  
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  code, pre, .font-mono {
+    @apply font-mono;
+    font-family: var(--font-mono), 'Consolas', monospace;
+  }
+  
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+  
+  /* Focus styles */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-calterio-orange;
+  }
+}
+
+/* Component utilities */
+@layer components {
+  /* Container */
+  .container {
+    @apply mx-auto px-4 md:px-6;
+    max-width: 1320px;
+  }
+  
+  /* Section spacing */
+  .section-padding {
+    @apply py-14 md:py-24;
+  }
+  
+  /* Card styles */
+  .card-base {
+    @apply bg-surface border border-border-default rounded-md p-6;
+  }
+  
+  .card-hover {
+    @apply card-base transition-all duration-200 hover:border-calterio-orange;
+  }
+  
+  /* Button base */
+  .btn-base {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply btn-base bg-calterio-orange text-background hover:bg-calterio-orange/90;
+  }
+  
+  .btn-secondary {
+    @apply btn-base border-2 border-calterio-orange text-calterio-orange hover:bg-calterio-orange hover:text-background;
+  }
+  
+  .btn-outline {
+    @apply btn-base border border-border-default text-text-primary hover:border-calterio-orange hover:text-calterio-orange;
+  }
+}
+
+/* Utility classes for Calterio colors */
+@layer utilities {
+  .text-calterio-orange {
+    color: var(--calterio-orange);
+  }
+  
+  .text-calterio-red {
+    color: var(--calterio-red);
+  }
+  
+  .text-calterio-dark-blue {
+    color: var(--calterio-dark-blue);
+  }
+  
+  .bg-calterio-orange {
+    background-color: var(--calterio-orange);
+  }
+  
+  .bg-calterio-red {
+    background-color: var(--calterio-red);
+  }
+  
+  .bg-calterio-dark-blue {
+    background-color: var(--calterio-dark-blue);
+  }
+  
+  .border-calterio-orange {
+    border-color: var(--calterio-orange);
+  }
+  
+  .border-calterio-red {
+    border-color: var(--calterio-red);
+  }
+  
+  .border-calterio-dark-blue {
+    border-color: var(--calterio-dark-blue);
+  }
+  
+  /* Background opacity utilities */
+  .bg-calterio-orange\/10 {
+    background-color: rgba(242, 139, 36, 0.1);
+  }
+  
+  .bg-calterio-red\/10 {
+    background-color: rgba(225, 2, 9, 0.1);
+  }
+  
+  .bg-calterio-dark-blue\/10 {
+    background-color: rgba(19, 26, 71, 0.1);
+  }
+  
+  /* Text opacity utilities */
+  .text-calterio-orange\/80 {
+    color: rgba(242, 139, 36, 0.8);
+  }
+  
+  .text-calterio-red\/80 {
+    color: rgba(225, 2, 9, 0.8);
+  }
+}

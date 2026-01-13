@@ -1,0 +1,36 @@
+slug: predictive-maintenance-automotive
+title: Predictive Maintenance for Automotive Manufacturing
+h1: Predictive Maintenance for Automotive Assembly Lines
+meta_description: Prevent line stoppages in critical assembly stations with ML-powered predictive maintenance. Reduce downtime by 30-40% in automotive manufacturing.
+industry: Automotive
+problem:
+  - Line stoppages in critical assembly stations
+  - Unplanned equipment failures
+  - High maintenance costs
+  - Production delays
+solution:
+  - Real-time monitoring of assembly line equipment
+  - ML models for failure prediction
+  - Predictive alerts for maintenance scheduling
+  - Integration with production planning
+architecture_ref: pm-arch-v1
+workflow:
+  - Continuous monitoring of robots and conveyors
+  - Vibration and temperature analysis
+  - ML model inference
+  - Maintenance scheduling during planned downtime
+  - Production line optimization
+kpis:
+  - 30-40% reduction in unplanned downtime
+  - 12% improvement in OEE
+  - 25% reduction in quality defects
+  - 100% traceability compliance
+integrations:
+  - Production planning systems
+  - CMMS
+  - Robot controllers
+cta: Request Architecture Walkthrough
+related_use_cases:
+  - quality-control-pharmaceutical
+  - production-optimization-electronics
+
