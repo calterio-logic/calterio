@@ -38,7 +38,7 @@ const platformMenu = [
 
 const date = new Date().getFullYear();
 
-export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
+export default function Footer() {
   return (
     <footer className="cs-fooer">
       <Div className="cs-fooer_main">
