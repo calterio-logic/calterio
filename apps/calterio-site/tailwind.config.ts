@@ -45,8 +45,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: typography.fontFamily.sans,
-        mono: typography.fontFamily.mono,
+        sans: [...typography.fontFamily.sans],
+        mono: [...typography.fontFamily.mono],
       },
       fontSize: typography.fontSize,
       fontWeight: typography.fontWeight,
