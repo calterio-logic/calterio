@@ -1,7 +1,3 @@
-export async function generateStaticParams() {
-  return [];
-}
-
 import Cta from "@/app/ui/Cta";
 import Div from "@/app/ui/Div";
 import PageHeading from "@/app/ui/PageHeading";
@@ -12,6 +8,10 @@ import Image from "next/image";
 import Link from "next/link";
 // Using placeholder image - replace with actual image when available
 const imgUrl = '/images/calterio-main-logo.png';
+
+export async function generateStaticParams() {
+  return [];
+}
 
 export default function BlogDetailsPage() {
   return (
