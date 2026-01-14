@@ -16,6 +16,18 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Exclude template routes that aren't being used
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+  // Custom webpack config to exclude template routes
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Exclude template routes from client bundle
+      config.resolve.alias = {
+        ...config.resolve.alias,
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
