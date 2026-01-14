@@ -45,8 +45,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: [...typography.fontFamily.sans],
-        mono: [...typography.fontFamily.mono],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "Consolas", "monospace"],
       },
       fontSize: typography.fontSize,
       fontWeight: typography.fontWeight,
