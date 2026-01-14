@@ -1,3 +1,7 @@
+export async function generateStaticParams() {
+  return [];
+}
+
 import Cta from "@/app/ui/Cta"
 import Div from "@/app/ui/Div"
 import PageHeading from "@/app/ui/PageHeading"
@@ -6,10 +10,6 @@ import SocialWidget from "@/app/ui/Widget/SocialWidget"
 // Using placeholder image - replace with actual image when available
 const imgUrl = '/images/calterio-main-logo.png'
 import Image from "next/image"
-
-export async function generateStaticParams() {
-  return [];
-}
 
 export default function TeamDetails() {
   return (

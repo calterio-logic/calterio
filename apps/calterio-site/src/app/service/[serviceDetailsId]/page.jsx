@@ -1,3 +1,7 @@
+export async function generateStaticParams() {
+  return [];
+}
+
 import Accordion from "@/app/ui/Accordion";
 import Button from "@/app/ui/Button";
 import Cta from "@/app/ui/Cta";
@@ -10,10 +14,6 @@ import Spacing from "@/app/ui/Spacing";
 import Image from "next/image";
 // Using placeholder image - replace with actual image when available
 const serviceImage = '/images/calterio-main-logo.png'
-
-export async function generateStaticParams() {
-  return [];
-}
 
 export default function ServiceDetailsPage() {
   return (
