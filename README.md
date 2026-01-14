@@ -5,7 +5,7 @@ Enterprise website for Calterio Logic - Factory Operating System with Visual PLC
 ## Repository
 
 - **GitHub**: https://github.com/calterio-logic/calterio.git
-- **Website**: https://calterio.com
+- **Website**: https://calterio-logic.github.io/calterio/ (or https://calterio-logic.github.io/ if organization page)
 
 ## Tech Stack
 
@@ -38,29 +38,17 @@ calterio-site/
 
 ## Getting Started
 
-### Prerequisites
+For detailed setup instructions, see [docs/SETUP.md](docs/SETUP.md)
 
-- Node.js 20+
-- npm
-
-### Installation
+### Quick Start
 
 ```bash
 # Install dependencies
 npm install
-
-# Navigate to app directory
 cd apps/calterio-site
-
-# Install app dependencies
 npm install
-```
 
-### Development
-
-```bash
-# Run development server
-cd apps/calterio-site
+# Start development server
 npm run dev
 ```
 
@@ -70,7 +58,6 @@ Visit http://localhost:3000
 
 ```bash
 # Build for production
-cd apps/calterio-site
 npm run build
 
 # Validate SEO before build
@@ -81,7 +68,11 @@ npm run build:seo-validate
 
 The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
 
-**Custom Domain**: calterio.com
+**GitHub Pages URL**: 
+- If project page: `https://calterio-logic.github.io/calterio/`
+- If organization page: `https://calterio-logic.github.io/`
+
+For complete deployment instructions, see [docs/SETUP.md](docs/SETUP.md)
 
 ## Design System
 

@@ -43,9 +43,8 @@
     @apply text-3xl md:text-4xl;
   }
   
-  code, pre, .font-mono {
-    @apply font-mono;
-    font-family: var(--font-mono), 'Consolas', monospace;
+  code, pre {
+    font-family: var(--font-mono), 'Consolas', 'Monaco', 'Courier New', monospace;
   }
   
   /* Links */

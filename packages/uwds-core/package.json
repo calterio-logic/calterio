@@ -7,8 +7,13 @@
   "exports": {
     ".": "./index.ts",
     "./tokens": "./tokens/index.ts",
+    "./tokens/colors": "./tokens/colors.ts",
+    "./tokens/typography": "./tokens/typography.ts",
+    "./tokens/spacing": "./tokens/spacing.ts",
+    "./tokens/layout": "./tokens/layout.ts",
     "./components": "./components/index.ts",
     "./diagrams": "./diagrams/index.ts",
+    "./tailwind/config": "./tailwind/config.ts",
     "./tailwind": "./tailwind/config.ts"
   },
   "scripts": {

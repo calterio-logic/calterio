@@ -1,8 +1,5 @@
 import type { Config } from "tailwindcss";
-import { colors } from "@calterio/uwds-core/tokens/colors";
-import { typography } from "@calterio/uwds-core/tokens/typography";
-import { spacing } from "@calterio/uwds-core/tokens/spacing";
-import { layout } from "@calterio/uwds-core/tokens/layout";
+import { colors, typography, spacing, layout } from "@calterio/uwds-core/tokens";
 
 const config: Config = {
   content: [

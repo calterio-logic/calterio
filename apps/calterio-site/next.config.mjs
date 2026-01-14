@@ -5,11 +5,13 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  basePath: '', // Empty for root domain (calterio.com)
-  assetPrefix: '', // Empty for root domain
+  basePath: '', // Empty for organization/user page (https://username.github.io/)
+  // If project page, set to '/repository-name' (e.g., '/calterio' for https://username.github.io/calterio/)
+  assetPrefix: '', // Empty for GitHub Pages
   // Disable server-side features for static export
   reactStrictMode: true,
-  swcMinify: true,
+  // Transpile workspace packages
+  transpilePackages: ['@calterio/uwds-core'],
 };
 
 export default nextConfig;
