@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import parse from 'html-react-parser';
 import Button from '../Button';
 import Div from '../Div';
-import imgUrl from "../../../../public/images/hero_img_1.png"
+// Using placeholder image - replace with actual image when available
+const imgUrl = "/images/calterio-main-logo.png"
 import Image from 'next/image';
 
 export default function Hero9({

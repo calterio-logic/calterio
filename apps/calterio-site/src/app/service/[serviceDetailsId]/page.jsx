@@ -9,7 +9,8 @@ import SectionHeading from "@/app/ui/SectionHeading";
 import TestimonialSlider from "@/app/ui/Slider/TestimonialSlider";
 import Spacing from "@/app/ui/Spacing";
 import Image from "next/image";
-import serviceImage from '../../../../public/images/service_img_1.jpeg'
+// Using placeholder image - replace with actual image when available
+const serviceImage = '/images/calterio-main-logo.png'
 
 export default function ServiceDetailsPage() {
   return (

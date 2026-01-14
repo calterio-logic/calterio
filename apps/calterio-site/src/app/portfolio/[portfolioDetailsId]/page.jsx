@@ -6,7 +6,8 @@ import PageHeading from "@/app/ui/PageHeading";
 import SectionHeading from "@/app/ui/SectionHeading";
 import Spacing from "@/app/ui/Spacing";
 import Image from "next/image";
-import imgUrl from '../../../../public/images/portfolio_details_1.jpeg'
+// Using placeholder image - replace with actual image when available
+const imgUrl = '/images/calterio-main-logo.png'
 
 export default function PortfolioDetailsPage() {
   return (

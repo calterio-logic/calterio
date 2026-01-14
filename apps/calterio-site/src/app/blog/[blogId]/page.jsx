@@ -7,7 +7,8 @@ import Spacing from "@/app/ui/Spacing";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
-import imgUrl from '../../../../public/images/post_5.jpeg';
+// Using placeholder image - replace with actual image when available
+const imgUrl = '/images/calterio-main-logo.png';
 
 export default function BlogDetailsPage() {
   return (

@@ -2,7 +2,8 @@ import React from 'react';
 import parse from 'html-react-parser';
 import Button from '../Button';
 import Image from 'next/image';
-import shape1Url from "../../../../public/images/hero_img_2.png"
+// Using placeholder image - replace with actual image when available
+const shape1Url = "/images/calterio-main-logo.png"
 
 export default function Hero10({
   title,

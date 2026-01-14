@@ -4,7 +4,8 @@ import Div from "@/app/ui/Div"
 import PageHeading from "@/app/ui/PageHeading"
 import Spacing from "@/app/ui/Spacing"
 import SocialWidget from "@/app/ui/Widget/SocialWidget"
-import imgUrl from '../../../../public/images/member_details_1.jpeg'
+// Using placeholder image - replace with actual image when available
+const imgUrl = '/images/calterio-main-logo.png'
 import Image from "next/image"
 
 export default function TeamDetails() {

@@ -11,7 +11,8 @@ import Spacing from '@/app/ui/Spacing';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 
-import aboutImg from '../../../public/images/about_img_5.jpeg';
+// Using placeholder image - replace with actual image when available
+const aboutImg = '/images/calterio-main-logo.png';
 import Card from '../ui/Card';
 
 const heroData = [

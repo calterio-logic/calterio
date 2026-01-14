@@ -7,10 +7,11 @@ import PageHeading from "@/app/ui/PageHeading";
 import SectionHeading from "@/app/ui/SectionHeading";
 import TeamSlider from "@/app/ui/Slider/TeamSlider";
 import Spacing from "@/app/ui/Spacing";
-import aboutImg from '../../../public/images/about_img_1.jpeg'
-import aboutImg2 from '../../../public/images/about_img_2.jpeg'
-import aboutImg3 from '../../../public/images/about_img_3.jpeg'
-import aboutImg4 from '../../../public/images/about_img_4.jpeg'
+// Using placeholder images - replace with actual images when available
+const aboutImg = '/images/calterio-main-logo.png'
+const aboutImg2 = '/images/calterio-main-logo.png'
+const aboutImg3 = '/images/calterio-main-logo.png'
+const aboutImg4 = '/images/calterio-main-logo.png'
 
 
 
