@@ -10,6 +10,10 @@ import Link from "next/link";
 // Using placeholder image - replace with actual image when available
 const imgUrl = '/images/calterio-main-logo.png';
 
+export async function generateStaticParams() {
+  return [];
+}
+
 export default function BlogDetailsPage() {
   return (
     <>

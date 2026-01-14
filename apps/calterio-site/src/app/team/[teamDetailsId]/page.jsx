@@ -8,6 +8,10 @@ import SocialWidget from "@/app/ui/Widget/SocialWidget"
 const imgUrl = '/images/calterio-main-logo.png'
 import Image from "next/image"
 
+export async function generateStaticParams() {
+  return [];
+}
+
 export default function TeamDetails() {
   return (
     <>
