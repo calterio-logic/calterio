@@ -47,6 +47,11 @@ jobs:
           cd apps/calterio-site
           npm run build:seo-validate
 
+      - name: Clean build directory
+        run: |
+          cd apps/calterio-site
+          rm -rf .next out || true
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
