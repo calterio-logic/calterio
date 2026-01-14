@@ -32,6 +32,8 @@ export default function CaseStudyDetailsPage() {
           alt="Thumb"
           className="w-100 cs-radius_15"
           placeholder="blur"
+          width={1200}
+          height={600}
         />
         <Spacing lg="140" md="80" />
         <h2 className="cs-font_38 text-center">Case Study Overview</h2>
@@ -164,7 +166,7 @@ export default function CaseStudyDetailsPage() {
       {/* Start CTA Section */}
       <Div className="container">
         <Cta
-          title="Let’s disscuse make <br />something <i>cool</i> together"
+          title="Let's disscuse make <br />something <i>cool</i> together"
           btnText="Apply For Meeting"
           btnLink="/contact"
           bgSrc="/images/cta_bg.jpeg"
@@ -174,3 +176,4 @@ export default function CaseStudyDetailsPage() {
     </>
   );
 }
+

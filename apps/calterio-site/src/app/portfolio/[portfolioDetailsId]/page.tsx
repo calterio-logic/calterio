@@ -22,7 +22,7 @@ export default function PortfolioDetailsPage() {
       />
       <Spacing lg='150' md='80'/>
       <Div className="container">
-        <Image src={imgUrl} alt="Details" placeholder="blur" className="cs-radius_15 w-100" />
+        <Image src={imgUrl} alt="Details" placeholder="blur" className="cs-radius_15 w-100" width={1200} height={600} />
         <Spacing lg='90' md='40'/>
         <Div className="row">
           <Div className="col-lg-6">
@@ -88,3 +88,4 @@ export default function PortfolioDetailsPage() {
     </>
   )
 }
+

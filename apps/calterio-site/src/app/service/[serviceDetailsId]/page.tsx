@@ -63,7 +63,7 @@ export default function ServiceDetailsPage() {
         <Div className="row align-items-center">
           <Div className="col-xl-5 col-lg-6">
             <Div className="cs-radius_15 cs-shine_hover_1">
-              <Image src={serviceImage} alt="Service" className='cs-radius_15 w-100' placeholder="blur" />
+              <Image src={serviceImage} alt="Service" className='cs-radius_15 w-100' placeholder="blur" width={600} height={400} />
             </Div>
             <Spacing lg='0' md='40'/>
           </Div>
@@ -110,7 +110,7 @@ export default function ServiceDetailsPage() {
             <Div className="col-xl-5 col-lg-6">
               <SectionHeading
                 title='Some pre questions and answers' 
-                subtitle='FAQ’s'
+                subtitle='FAQ's'
               />
               <Spacing lg='90' md='45'/>
             </Div>
@@ -123,7 +123,7 @@ export default function ServiceDetailsPage() {
       <Spacing lg='150' md='80'/>
       <Div className="container">
         <Cta 
-          title='Let’s disscuse make <br />something <i>cool</i> together' 
+          title='Let's disscuse make <br />something <i>cool</i> together' 
           btnText='Apply For Meeting' 
           btnLink='/contact' 
           bgSrc='/images/cta_bg.jpeg'
@@ -132,3 +132,4 @@ export default function ServiceDetailsPage() {
     </>
   )
 }
+

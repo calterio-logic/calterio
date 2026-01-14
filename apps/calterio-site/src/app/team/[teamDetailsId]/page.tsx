@@ -24,7 +24,7 @@ export default function TeamDetails() {
         <Div className="row align-items-center">
           <Div className="col-xl-5 col-lg-6">
             <Div className="cs-radius_15 cs-shine_hover_1">
-              <Image src={imgUrl} alt="Member" className="w-100" placeholder="blur" />
+              <Image src={imgUrl} alt="Member" className="w-100" placeholder="blur" width={500} height={600} />
             </Div>
           </Div>
           <Div className="col-lg-6 offset-xl-1">
@@ -48,7 +48,7 @@ export default function TeamDetails() {
       <Spacing lg='150' md='80'/>
       <Div className="container">
         <Cta 
-          title='Let’s disscuse make <br />something <i>cool</i> together' 
+          title='Let's disscuse make <br />something <i>cool</i> together' 
           btnText='Apply For Meeting' 
           btnLink='/contact' 
           bgSrc='/images/cta_bg.jpeg'
@@ -57,3 +57,4 @@ export default function TeamDetails() {
     </>
   )
 }
+
