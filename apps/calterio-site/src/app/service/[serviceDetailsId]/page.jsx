@@ -1,4 +1,3 @@
-'use client'
 import Accordion from "@/app/ui/Accordion";
 import Button from "@/app/ui/Button";
 import Cta from "@/app/ui/Cta";

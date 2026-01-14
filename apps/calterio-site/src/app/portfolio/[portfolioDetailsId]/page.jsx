@@ -1,4 +1,3 @@
-'use client'
 import Button from "@/app/ui/Button";
 import Cta from "@/app/ui/Cta";
 import Div from "@/app/ui/Div";
