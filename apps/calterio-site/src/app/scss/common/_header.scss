@@ -330,7 +330,7 @@
       align-items: center;
       height: 100%;
       width: 100%;
-      max-width: calc(100% - 300px);
+      max-width: calc(100% - 400px);
     }
     .cs-main_header_left {
       height: 100%;
@@ -350,12 +350,14 @@
 
     .cs-nav_list {
       display: flex !important;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       height: inherit;
+      white-space: nowrap;
 
       > li {
-        margin-right: 50px;
+        margin-right: 40px;
         height: inherit;
+        white-space: nowrap;
 
         &:last-child {
           margin-right: 0;

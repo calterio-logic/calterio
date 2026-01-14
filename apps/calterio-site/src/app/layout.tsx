@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <meta name="author" content="Calterio Logic" />
-        <link rel="icon" href="/images/favicon.png" sizes="any" />
+        <link rel="icon" href="/images/calterio-site-icon.png" sizes="any" />
         <title>Calterio Logic - Factory Operating System</title>
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} bg-background text-text-primary`}>

@@ -69,7 +69,10 @@ export function LogicEditorFlow({ activeStep, className = '' }: LogicEditorFlowP
         viewBox="0 0 980 600"
         className="w-full h-auto"
         onMouseLeave={() => setHoveredStep(null)}
+        role="img"
+        aria-label="Logic Editor Workflow Diagram"
       >
+        <title>Logic Editor Workflow</title>
         {/* Background */}
         <rect width="980" height="600" fill="#0B0F14" />
 
@@ -106,7 +109,11 @@ export function LogicEditorFlow({ activeStep, className = '' }: LogicEditorFlowP
             <text
               x={step.x + step.width / 2}
               y={step.y + 35}
-              fill={getStepColor(step.id)}
+              fill={
+                activeStep === step.id || hoveredStep === step.id
+                  ? '#0B0F14' // Dark text on orange background
+                  : '#E5E7EB' // Light text on dark background
+              }
               fontSize="14"
               fontFamily="Inter, sans-serif"
               fontWeight="700"
@@ -119,9 +126,14 @@ export function LogicEditorFlow({ activeStep, className = '' }: LogicEditorFlowP
             <text
               x={step.x + step.width / 2}
               y={step.y + 60}
-              fill="#9CA3AF"
+              fill={
+                activeStep === step.id || hoveredStep === step.id
+                  ? '#374151' // Darker gray on orange background
+                  : '#9CA3AF' // Light gray on dark background
+              }
               fontSize="11"
               fontFamily="Inter, sans-serif"
+              fontWeight="500"
               textAnchor="middle"
             >
               {step.description}
@@ -232,9 +244,10 @@ export function LogicEditorFlow({ activeStep, className = '' }: LogicEditorFlowP
         <text
           x="240"
           y="280"
-          fill="#6B7280"
-          fontSize="10"
+          fill="#9CA3AF"
+          fontSize="11"
           fontFamily="Inter, sans-serif"
+          fontWeight="500"
           textAnchor="middle"
         >
           Editor Interface

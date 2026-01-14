@@ -69,7 +69,10 @@ export function IntentBasedControl({ activeStage, className = '' }: IntentBasedC
         viewBox="0 0 980 550"
         className="w-full h-auto"
         onMouseLeave={() => setHoveredStage(null)}
+        role="img"
+        aria-label="Intent-Based Control Flow Diagram"
       >
+        <title>Intent-Based Control Flow</title>
         {/* Background */}
         <rect width="980" height="550" fill="#0B0F14" />
 
@@ -104,7 +107,11 @@ export function IntentBasedControl({ activeStage, className = '' }: IntentBasedC
             <text
               x={stage.x + stage.width / 2}
               y={stage.y + 25}
-              fill={activeStage === stage.id || hoveredStage === stage.id ? '#0B0F14' : getStageColor(stage.id)}
+              fill={
+                activeStage === stage.id || hoveredStage === stage.id
+                  ? '#0B0F14' // Dark text on orange background
+                  : '#E5E7EB' // Light text on dark background
+              }
               fontSize="13"
               fontFamily="Inter, sans-serif"
               fontWeight="700"
@@ -119,9 +126,14 @@ export function IntentBasedControl({ activeStage, className = '' }: IntentBasedC
               <text
                 x={stage.x + stage.width / 2}
                 y={stage.y + 50}
-                fill={activeStage === stage.id || hoveredStage === stage.id ? '#0B0F14' : '#9CA3AF'}
-                fontSize="10"
+                fill={
+                  activeStage === stage.id || hoveredStage === stage.id
+                    ? '#374151' // Darker gray on orange background
+                    : '#9CA3AF' // Light gray on dark background
+                }
+                fontSize="11"
                 fontFamily="JetBrains Mono, monospace"
+                fontWeight="500"
                 textAnchor="middle"
               >
                 {stage.examples[0]}
@@ -131,9 +143,14 @@ export function IntentBasedControl({ activeStage, className = '' }: IntentBasedC
               <text
                 x={stage.x + stage.width / 2}
                 y={stage.y + 50}
-                fill={activeStage === stage.id || hoveredStage === stage.id ? '#0B0F14' : '#9CA3AF'}
-                fontSize="10"
+                fill={
+                  activeStage === stage.id || hoveredStage === stage.id
+                    ? '#374151' // Darker gray on orange background
+                    : '#9CA3AF' // Light gray on dark background
+                }
+                fontSize="11"
                 fontFamily="Inter, sans-serif"
+                fontWeight="500"
                 textAnchor="middle"
               >
                 {stage.checks[0]}
@@ -143,9 +160,14 @@ export function IntentBasedControl({ activeStage, className = '' }: IntentBasedC
               <text
                 x={stage.x + stage.width / 2}
                 y={stage.y + 50}
-                fill={activeStage === stage.id || hoveredStage === stage.id ? '#0B0F14' : '#9CA3AF'}
-                fontSize="10"
+                fill={
+                  activeStage === stage.id || hoveredStage === stage.id
+                    ? '#374151' // Darker gray on orange background
+                    : '#9CA3AF' // Light gray on dark background
+                }
+                fontSize="11"
                 fontFamily="Inter, sans-serif"
+                fontWeight="500"
                 textAnchor="middle"
               >
                 {stage.details[0]}
@@ -182,8 +204,8 @@ export function IntentBasedControl({ activeStage, className = '' }: IntentBasedC
         <text
           x="400"
           y="253"
-          fill="#0B0F14"
-          fontSize="10"
+          fill="#FFFFFF"
+          fontSize="11"
           fontFamily="Inter, sans-serif"
           fontWeight="700"
           textAnchor="middle"
@@ -224,9 +246,10 @@ export function IntentBasedControl({ activeStage, className = '' }: IntentBasedC
         <text
           x="760"
           y="255"
-          fill="#9CA3AF"
-          fontSize="10"
+          fill="#E5E7EB"
+          fontSize="11"
           fontFamily="Inter, sans-serif"
+          fontWeight="600"
         >
           Edge
         </text>
@@ -258,9 +281,9 @@ export function IntentBasedControl({ activeStage, className = '' }: IntentBasedC
           x="250"
           y="380"
           fill="#E10209"
-          fontSize="11"
+          fontSize="12"
           fontFamily="Inter, sans-serif"
-          fontWeight="600"
+          fontWeight="700"
         >
           REJECTED
         </text>

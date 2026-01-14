@@ -17,22 +17,22 @@ const copyrightLinks = [
   },
 ];
 
-const serviceMenu = [
+const platformMenu = [
   {
-    title: 'UI/UX design',
-    href: '/service/service-details',
+    title: 'Calterio FOS',
+    href: '/architecture',
   },
   {
-    title: 'WP development',
-    href: '/service/service-details',
+    title: 'Logic Editor',
+    href: '/logic-editor',
   },
   {
-    title: 'Digital marketing',
-    href: '/service/service-details',
+    title: 'Dataflow Modeler',
+    href: '/dataflow-modeler',
   },
   {
-    title: 'React development',
-    href: '/service/service-details',
+    title: 'Edge Runtime',
+    href: '/edge-runtime',
   },
 ];
 
@@ -47,16 +47,16 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
                 <TextWidget
-                  logoSrc="/images/footer_logo.svg"
-                  logoAlt="Logo"
-                  text="Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium."
+                  logoSrc="/images/calterio-side-by-side-logo.png"
+                  logoAlt="Calterio Logo"
+                  text="Factory Operating System for modern manufacturing. Transform operations through real-time control, unified data management, and AI-powered insights."
                 />
                 <SocialWidget />
               </Div>
             </Div>
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
-                <MenuWidget menuItems={serviceMenu} menuHeading="Services" />
+                <MenuWidget menuItems={platformMenu} menuHeading="Platform" />
               </Div>
             </Div>
             <Div className="col-lg-3 col-sm-6">
@@ -67,9 +67,9 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
                 <Newsletter
-                  title="Subscribe"
-                  subtitle="At vero eos et accusamus et iusto odio as part dignissimos ducimus qui blandit."
-                  placeholder="example@gmail.com"
+                  title="Stay Updated"
+                  subtitle="Get the latest insights on factory automation, digital transformation, and manufacturing intelligence."
+                  placeholder="your.email@company.com"
                 />
               </Div>
             </Div>
@@ -80,7 +80,7 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
         <Div className="cs-bottom_footer">
           <Div className="cs-bottom_footer_left">
             <Div className="cs-copyright">
-              Copyright © {`${date}`} Laralink.
+              Copyright © {`${date}`} Calterio Logic. All rights reserved.
             </Div>
           </Div>
           <Div className="cs-bottom_footer_right">

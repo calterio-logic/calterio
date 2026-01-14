@@ -43,7 +43,10 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
         viewBox="0 0 900 600"
         className="w-full h-auto"
         onMouseLeave={() => setHoveredIntegration(null)}
+        role="img"
+        aria-label="Integration Gateway Diagram"
       >
+        <title>Integration Points</title>
         {/* Background */}
         <rect width="900" height="600" fill="#0B0F14" />
 
@@ -64,7 +67,7 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
         <text
           x="50"
           y="80"
-          fill="#9CA3AF"
+          fill="#E5E7EB"
           fontSize="16"
           fontFamily="Inter, sans-serif"
           fontWeight="700"
@@ -76,7 +79,7 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
         <text
           x="50"
           y="430"
-          fill="#9CA3AF"
+          fill="#E5E7EB"
           fontSize="16"
           fontFamily="Inter, sans-serif"
           fontWeight="700"
@@ -98,7 +101,7 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
         <text
           x={gateway.x + gateway.width / 2}
           y={gateway.y + 35}
-          fill="#F28B24"
+          fill="#0B0F14"
           fontSize="18"
           fontFamily="Inter, sans-serif"
           fontWeight="700"
@@ -110,7 +113,7 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
         <text
           x={gateway.x + gateway.width / 2}
           y={gateway.y + 60}
-          fill="#F28B24"
+          fill="#0B0F14"
           fontSize="18"
           fontFamily="Inter, sans-serif"
           fontWeight="700"
@@ -122,9 +125,10 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
         <text
           x={gateway.x + gateway.width / 2}
           y={gateway.y + 85}
-          fill="#9CA3AF"
+          fill="#374151"
           fontSize="12"
           fontFamily="Inter, sans-serif"
+          fontWeight="500"
           textAnchor="middle"
         >
           Apache Camel
@@ -148,7 +152,11 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
             <text
               x={integration.x}
               y={integration.y + 5}
-              fill={getIntegrationColor(integration.id)}
+              fill={
+                highlight.includes(integration.id) || hoveredIntegration === integration.id
+                  ? '#0B0F14' // Dark text on orange background
+                  : '#E5E7EB' // Light text on dark background
+              }
               fontSize="14"
               fontFamily="Inter, sans-serif"
               fontWeight="700"
@@ -161,9 +169,14 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
             <text
               x={integration.x}
               y={integration.y + 20}
-              fill="#6B7280"
-              fontSize="10"
+              fill={
+                highlight.includes(integration.id) || hoveredIntegration === integration.id
+                  ? '#374151' // Darker gray on orange background
+                  : '#9CA3AF' // Light gray on dark background
+              }
+              fontSize="11"
               fontFamily="Inter, sans-serif"
+              fontWeight="500"
               textAnchor="middle"
             >
               {integration.category}
@@ -212,9 +225,10 @@ export function IntegrationPoints({ highlight = [], className = '' }: Integratio
         <text
           x="325"
           y="200"
-          fill="#6B7280"
-          fontSize="9"
+          fill="#9CA3AF"
+          fontSize="10"
           fontFamily="Inter, sans-serif"
+          fontWeight="500"
           textAnchor="middle"
         >
           Bidirectional

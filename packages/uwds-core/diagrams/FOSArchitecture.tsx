@@ -47,7 +47,10 @@ export function FOSArchitecture({ highlight = [], className = '' }: FOSArchitect
         viewBox="0 0 1000 650"
         className="w-full h-auto"
         onMouseLeave={() => setHoveredComponent(null)}
+        role="img"
+        aria-label="Calterio FOS Logical Architecture Diagram"
       >
+        <title>Calterio FOS Logical Architecture</title>
         {/* Background */}
         <rect width="1000" height="650" fill="#0B0F14" />
 
@@ -64,20 +67,20 @@ export function FOSArchitecture({ highlight = [], className = '' }: FOSArchitect
         <text
           x="50"
           y="440"
-          fill="#9CA3AF"
+          fill="#E5E7EB"
           fontSize="14"
           fontFamily="Inter, sans-serif"
-          fontWeight="600"
+          fontWeight="700"
         >
           CLOUD
         </text>
         <text
           x="50"
           y="470"
-          fill="#9CA3AF"
+          fill="#E5E7EB"
           fontSize="14"
           fontFamily="Inter, sans-serif"
-          fontWeight="600"
+          fontWeight="700"
         >
           EDGE
         </text>
@@ -102,8 +105,14 @@ export function FOSArchitecture({ highlight = [], className = '' }: FOSArchitect
             <text
               x={comp.x + comp.width / 2}
               y={comp.y + comp.height / 2}
-              fill={getComponentColor(comp.id)}
-              fontSize="12"
+              fill={
+                highlight.includes(comp.id) || hoveredComponent === comp.id
+                  ? '#0B0F14' // Dark text on orange/red background
+                  : comp.id === 'edgeruntime'
+                  ? '#E5E7EB' // Light text on red background
+                  : '#E5E7EB' // Light text on dark background
+              }
+              fontSize="13"
               fontFamily="Inter, sans-serif"
               fontWeight="700"
               textAnchor="middle"
@@ -225,8 +234,8 @@ export function FOSArchitecture({ highlight = [], className = '' }: FOSArchitect
         </defs>
 
         {/* Device connections to Edge Runtime */}
-        <circle cx="200" cy="580" r="30" fill="#121826" stroke="#1F2937" strokeWidth="2" />
-        <text x="200" y="585" fill="#9CA3AF" fontSize="10" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="600">
+        <circle cx="200" cy="580" r="30" fill="#121826" stroke="#374151" strokeWidth="2" />
+        <text x="200" y="585" fill="#E5E7EB" fontSize="11" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="700">
           PLC
         </text>
         <path
@@ -237,8 +246,8 @@ export function FOSArchitecture({ highlight = [], className = '' }: FOSArchitect
           markerEnd="url(#arrowhead-orange)"
         />
 
-        <circle cx="500" cy="580" r="30" fill="#121826" stroke="#1F2937" strokeWidth="2" />
-        <text x="500" y="585" fill="#9CA3AF" fontSize="10" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="600">
+        <circle cx="500" cy="580" r="30" fill="#121826" stroke="#374151" strokeWidth="2" />
+        <text x="500" y="585" fill="#E5E7EB" fontSize="11" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="700">
           ROBOT
         </text>
         <path
@@ -249,8 +258,8 @@ export function FOSArchitecture({ highlight = [], className = '' }: FOSArchitect
           markerEnd="url(#arrowhead-orange)"
         />
 
-        <circle cx="800" cy="580" r="30" fill="#121826" stroke="#1F2937" strokeWidth="2" />
-        <text x="800" y="585" fill="#9CA3AF" fontSize="10" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="600">
+        <circle cx="800" cy="580" r="30" fill="#121826" stroke="#374151" strokeWidth="2" />
+        <text x="800" y="585" fill="#E5E7EB" fontSize="11" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="700">
           SENSOR
         </text>
         <path

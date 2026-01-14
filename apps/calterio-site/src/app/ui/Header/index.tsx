@@ -38,7 +38,7 @@ export default function Header({ variant }: HeaderProps) {
             <Div className="cs-main_header_in">
               <Div className="cs-main_header_left">
                 <Link className="cs-site_branding" href="/">
-                  <img src="/images/logo-main.png" alt="Calterio Logo" />
+                  <img src="/images/calterio-main-logo.png" alt="Calterio Logo" />
                 </Link>
               </Div>
               <Div className="cs-main_header_center">
@@ -95,6 +95,30 @@ export default function Header({ variant }: HeaderProps) {
                           </li>
                         </ul>
                       </DropDown>
+                    </li>
+                    <li>
+                      <Link
+                        href="/logic-editor"
+                        onClick={() => setMobileToggle(false)}
+                      >
+                        Logic Editor
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/dataflow-modeler"
+                        onClick={() => setMobileToggle(false)}
+                      >
+                        Dataflow Modeler
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/edge-runtime"
+                        onClick={() => setMobileToggle(false)}
+                      >
+                        Edge Runtime
+                      </Link>
                     </li>
                     <li className="menu-item-has-children">
                       <Link

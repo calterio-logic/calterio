@@ -50,7 +50,10 @@ export function DeploymentTopology({ highlight = [], className = '' }: Deploymen
         viewBox="0 0 800 650"
         className="w-full h-auto"
         onMouseLeave={() => setHoveredNode(null)}
+        role="img"
+        aria-label="Cloud and Edge Deployment Topology Diagram"
       >
+        <title>Deployment Topology</title>
         {/* Background */}
         <rect width="800" height="650" fill="#0B0F14" />
 
@@ -59,7 +62,7 @@ export function DeploymentTopology({ highlight = [], className = '' }: Deploymen
         <text
           x="50"
           y="30"
-          fill="#9CA3AF"
+          fill="#E5E7EB"
           fontSize="16"
           fontFamily="Inter, sans-serif"
           fontWeight="700"
@@ -123,7 +126,7 @@ export function DeploymentTopology({ highlight = [], className = '' }: Deploymen
         <text
           x="50"
           y="250"
-          fill="#9CA3AF"
+          fill="#E5E7EB"
           fontSize="16"
           fontFamily="Inter, sans-serif"
           fontWeight="700"
@@ -149,7 +152,11 @@ export function DeploymentTopology({ highlight = [], className = '' }: Deploymen
             <text
               x={node.x + node.width / 2}
               y={node.y + node.height / 2}
-              fill={getNodeColor(node.id)}
+              fill={
+                highlight.includes(node.id) || hoveredNode === node.id
+                  ? '#0B0F14' // Dark text on orange background
+                  : '#E5E7EB' // Light text on dark background
+              }
               fontSize="14"
               fontFamily="Inter, sans-serif"
               fontWeight="700"
@@ -162,9 +169,14 @@ export function DeploymentTopology({ highlight = [], className = '' }: Deploymen
             <text
               x={node.x + node.width / 2}
               y={node.y + node.height - 10}
-              fill="#6B7280"
-              fontSize="10"
+              fill={
+                highlight.includes(node.id) || hoveredNode === node.id
+                  ? '#374151' // Darker gray on orange background
+                  : '#9CA3AF' // Light gray on dark background
+              }
+              fontSize="11"
               fontFamily="Inter, sans-serif"
+              fontWeight="500"
               textAnchor="middle"
             >
               Edge Runtime
@@ -188,8 +200,12 @@ export function DeploymentTopology({ highlight = [], className = '' }: Deploymen
             <text
               x={line.x}
               y={line.y + 4}
-              fill={getNodeColor(line.id)}
-              fontSize="10"
+              fill={
+                highlight.includes(line.id) || hoveredNode === line.id
+                  ? '#0B0F14' // Dark text on orange background
+                  : '#E5E7EB' // Light text on dark background
+              }
+              fontSize="11"
               fontFamily="Inter, sans-serif"
               fontWeight="700"
               textAnchor="middle"
@@ -255,7 +271,7 @@ export function DeploymentTopology({ highlight = [], className = '' }: Deploymen
 
         {/* Network indicators */}
         <circle cx="750" cy="80" r="8" fill="#10B981" />
-        <text x="765" y="85" fill="#9CA3AF" fontSize="12" fontFamily="Inter, sans-serif">
+        <text x="765" y="85" fill="#E5E7EB" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="600">
           Active
         </text>
       </svg>

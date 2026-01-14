@@ -53,7 +53,10 @@ export function DataFlow({ highlight = [], className = '' }: DataFlowProps) {
         viewBox="0 0 900 550"
         className="w-full h-auto"
         onMouseLeave={() => setHoveredNode(null)}
+        role="img"
+        aria-label="UNS Data Flow Diagram"
       >
+        <title>UNS Data Flow</title>
         {/* Background */}
         <rect width="900" height="550" fill="#0B0F14" />
 
@@ -75,7 +78,7 @@ export function DataFlow({ highlight = [], className = '' }: DataFlowProps) {
         <text
           x="30"
           y="70"
-          fill="#9CA3AF"
+          fill="#E5E7EB"
           fontSize="14"
           fontFamily="Inter, sans-serif"
           fontWeight="700"
@@ -125,8 +128,12 @@ export function DataFlow({ highlight = [], className = '' }: DataFlowProps) {
                 <text
                   x={node.x}
                   y={node.y + 5}
-                  fill={getNodeColor(node.id)}
-                  fontSize="12"
+                  fill={
+                    highlight.includes(node.id) || hoveredNode === node.id
+                      ? '#0B0F14' // Dark text on orange background
+                      : '#E5E7EB' // Light text on dark background
+                  }
+                  fontSize="13"
                   fontFamily="Inter, sans-serif"
                   fontWeight="700"
                   textAnchor="middle"
@@ -153,7 +160,13 @@ export function DataFlow({ highlight = [], className = '' }: DataFlowProps) {
                 <text
                   x={node.x}
                   y={node.y + 5}
-                  fill={getNodeColor(node.id)}
+                  fill={
+                    highlight.includes(node.id) || hoveredNode === node.id
+                      ? '#0B0F14' // Dark text on orange background
+                      : node.id === 'uns'
+                      ? '#E5E7EB' // Light text on dark blue background
+                      : '#E5E7EB' // Light text on dark background
+                  }
                   fontSize="14"
                   fontFamily="Inter, sans-serif"
                   fontWeight="700"
@@ -266,6 +279,7 @@ export function DataFlow({ highlight = [], className = '' }: DataFlowProps) {
           fill="#9CA3AF"
           fontSize="11"
           fontFamily="Inter, sans-serif"
+          fontWeight="500"
           textAnchor="middle"
         >
           Event-driven updates

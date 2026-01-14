@@ -55,7 +55,10 @@ export function StateMachineFlow({ currentState, className = '' }: StateMachineF
         viewBox="0 0 900 500"
         className="w-full h-auto"
         onMouseLeave={() => setHoveredState(null)}
+        role="img"
+        aria-label="Machine State Transitions Diagram"
       >
+        <title>State Machine Flow</title>
         {/* Background */}
         <rect width="900" height="500" fill="#0B0F14" />
 
@@ -88,8 +91,16 @@ export function StateMachineFlow({ currentState, className = '' }: StateMachineF
             <text
               x={state.x}
               y={state.y + 5}
-              fill={currentState === state.id || hoveredState === state.id ? '#0B0F14' : getStateColor(state.id)}
-              fontSize="12"
+              fill={
+                currentState === state.id || hoveredState === state.id
+                  ? state.color === '#F28B24' || state.color === '#E10209' || state.color === '#131A47'
+                    ? '#0B0F14' // Dark text on colored backgrounds
+                    : '#E5E7EB' // Light text on gray backgrounds
+                  : state.color === '#F28B24' || state.color === '#E10209' || state.color === '#131A47'
+                  ? '#E5E7EB' // Light text on colored backgrounds
+                  : '#E5E7EB' // Light text on dark backgrounds
+              }
+              fontSize="13"
               fontFamily="Inter, sans-serif"
               fontWeight="700"
               textAnchor="middle"
@@ -136,9 +147,10 @@ export function StateMachineFlow({ currentState, className = '' }: StateMachineF
               <text
                 x={controlX}
                 y={controlY - 10}
-                fill="#9CA3AF"
-                fontSize="10"
+                fill="#E5E7EB"
+                fontSize="11"
                 fontFamily="Inter, sans-serif"
+                fontWeight="600"
                 textAnchor="middle"
               >
                 {transition.label}
@@ -152,7 +164,7 @@ export function StateMachineFlow({ currentState, className = '' }: StateMachineF
         <text
           x="750"
           y="120"
-          fill="#9CA3AF"
+          fill="#E5E7EB"
           fontSize="12"
           fontFamily="Inter, sans-serif"
           fontWeight="700"

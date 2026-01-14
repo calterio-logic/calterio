@@ -1,91 +1,121 @@
 'use client';
 import React from 'react';
-import { MetricBadge, ArchitectureBlock, FlowTimeline, IntegrationGrid } from '@calterio/uwds-core/components';
+import { MetricBadge, ArchitectureBlock, FlowTimeline, IntegrationGrid, ProblemBlock } from '@calterio/uwds-core/components';
 import { FOSArchitecture, LogicEditorFlow } from '@calterio/uwds-core/diagrams';
 import SectionHeading from '@/app/ui/SectionHeading';
 import Spacing from '@/app/ui/Spacing';
-import Div from '@/app/ui/Div';
 import SystemCard from '@/app/ui/Card';
+import FullScreenVerticalSlider2 from '@/app/ui/Slider/FullScreenVerticalSlider2';
 import { Icon } from '@iconify/react';
 
 export default function Home() {
-  // Calterio Orchestrates - Core components
-  const calterioComponents = [
+  // Core Capabilities for Decision Makers
+  const capabilities = [
     {
-      title: 'Calterio FOS',
-      description: 'Cloud-deployable orchestration platform with SCADA, UNS Engine, and Factory Intelligence',
-      iconName: 'mdi:factory',
+      title: 'Universal Device & Protocol Abstraction',
+      description: 'Connect any device, protocol, or system without vendor lock-in. 60-70% reduction in integration costs.',
+      iconName: 'mdi:network',
       link: '/architecture',
       accent: 'orange' as const,
     },
     {
-      title: 'Logic Editor',
-      description: 'Visual PLC Programming Studio with Ladder Logic, Structured Text, and real-time simulation',
-      iconName: 'mdi:code-braces',
-      link: '/architecture',
-      accent: 'orange' as const,
-    },
-    {
-      title: 'Edge Runtime',
-      description: 'Real-time deterministic execution with safety enforcement and offline-first operation',
-      iconName: 'mdi:server-network',
-      link: '/architecture',
-      accent: 'red' as const,
-    },
-    {
-      title: 'UNS Engine',
-      description: 'Unified Namespace providing hierarchical data organization and single source of truth',
+      title: 'Unified Namespace (UNS) Engine',
+      description: 'Single source of truth for all factory data. Real-time 360° visibility across entire operations.',
       iconName: 'mdi:database-network',
       link: '/architecture',
       accent: 'blue' as const,
     },
     {
-      title: 'Digital Twin',
-      description: 'Real-time synchronization with physical assets enabling what-if scenario simulation',
-      iconName: 'mdi:cube-outline',
+      title: 'Deterministic Real-Time Control',
+      description: 'Millisecond-level precision with safety enforcement. Sub-100ms response times for critical operations.',
+      iconName: 'mdi:clock-fast',
       link: '/architecture',
-      accent: 'orange' as const,
+      accent: 'red' as const,
     },
     {
-      title: 'Factory Intelligence',
-      description: 'AI/ML-powered insights for predictive maintenance, root cause analysis, and optimization',
+      title: 'Factory Intelligence & Analytics',
+      description: 'AI/ML-powered predictive maintenance, root cause analysis, and optimization. 30-40% reduction in unplanned downtime.',
       iconName: 'mdi:brain',
       link: '/architecture',
       accent: 'orange' as const,
     },
-  ];
-
-  // Logic Editor Features
-  const logicEditorSteps = [
     {
-      title: 'Ladder Logic Editor',
-      description: 'Drag-and-drop visual programming with IEC 61131-3 compliance. Intuitive interface for creating control logic.',
-      icon: 'mdi:view-grid',
+      title: 'Intent-Based Control',
+      description: 'High-level semantic commands. System decides "how" to execute safely. Faster operations with reduced errors.',
+      iconName: 'mdi:gesture-tap',
+      link: '/architecture',
+      accent: 'orange' as const,
     },
     {
-      title: 'Structured Text Editor',
-      description: 'Code-based programming with IntelliSense support. Full-featured editor for complex control algorithms.',
-      icon: 'mdi:code-tags',
-    },
-    {
-      title: 'Real-Time Simulation',
-      description: 'Test programs before deployment with deterministic simulation. Debug with variable watch tables and breakpoints.',
-      icon: 'mdi:play-circle',
-    },
-    {
-      title: 'Export & Deploy',
-      description: 'Export to PLCopen XML, OpenPLC, or Canonical JSON. Industry-standard formats for seamless integration.',
-      icon: 'mdi:export',
+      title: 'Digital Twin',
+      description: 'Real-time synchronization with physical assets. What-if scenario simulation and risk-free testing.',
+      iconName: 'mdi:cube-outline',
+      link: '/architecture',
+      accent: 'orange' as const,
     },
   ];
 
-  // Metrics
-  const metrics = [
-    { value: '<100ms', label: 'Latency', accent: 'orange' as const },
-    { value: '50K', label: 'Events/sec', accent: 'orange' as const },
-    { value: '99.9%', label: 'Uptime', accent: 'orange' as const },
-    { value: '30-40%', label: 'Downtime Reduction', accent: 'red' as const },
-    { value: '25-30%', label: 'Cost Reduction', accent: 'orange' as const },
+  // Key Features
+  const features = [
+    {
+      title: 'SCADA System',
+      description: 'Real-time visualization with customizable dashboards, intelligent alarm management, and historical trend analysis.',
+      iconName: 'mdi:monitor-dashboard',
+      link: '/architecture',
+      accent: 'orange' as const,
+    },
+    {
+      title: 'Workflow Orchestration',
+      description: 'BPMN-based workflow orchestration with business rules engine for process standardization and compliance.',
+      iconName: 'mdi:workflow',
+      link: '/architecture',
+      accent: 'orange' as const,
+    },
+    {
+      title: 'Integration Gateway',
+      description: 'Pre-built adapters for ERP, PLM, CMMS, QMS. Apache Camel-based integration framework with bidirectional sync.',
+      iconName: 'mdi:gate',
+      link: '/architecture',
+      accent: 'orange' as const,
+    },
+    {
+      title: 'High Availability',
+      description: 'Active-active clustering with 99.9% uptime. Horizontal scaling supports 10x growth without platform change.',
+      iconName: 'mdi:server-network',
+      link: '/architecture',
+      accent: 'orange' as const,
+    },
+  ];
+
+  // Business Benefits
+  const benefits = [
+    {
+      category: 'Operational Excellence',
+      items: [
+        { metric: '30-40%', label: 'Reduction in Unplanned Downtime' },
+        { metric: '10-15%', label: 'Increase in OEE' },
+        { metric: '70%', label: 'Reduction in MTTR' },
+        { metric: '20-25%', label: 'Reduction in Process Variations' },
+      ],
+    },
+    {
+      category: 'Cost Reduction',
+      items: [
+        { metric: '15-20%', label: 'Reduction in Energy Costs' },
+        { metric: '25-30%', label: 'Reduction in Maintenance Costs' },
+        { metric: '60-70%', label: 'Reduction in Integration Costs' },
+        { metric: '10-15%', label: 'Reduction in Scrap Rates' },
+      ],
+    },
+    {
+      category: 'Risk Mitigation',
+      items: [
+        { metric: '100%', label: 'Safety Compliance' },
+        { metric: '20-30%', label: 'Reduction in Quality Defects' },
+        { metric: '50%', label: 'Reduction in Audit Time' },
+        { metric: 'Zero', label: 'Downtime During Network Outages' },
+      ],
+    },
   ];
 
   // Integrations
@@ -110,6 +140,32 @@ export default function Home() {
 
   return (
     <>
+      {/* Factory Floor Video Showcase */}
+      <section className="relative min-h-screen">
+        <FullScreenVerticalSlider2
+          data={[
+            {
+              introTitle: 'Operational Excellence',
+              title: '40% Reduction in Unplanned Downtime',
+              videoUrl: '/videos/automated-conveyor-in-cosmetic-factory-automated-2025-12-17-07-34-41-utc.mp4',
+              href: '/architecture',
+            },
+            {
+              introTitle: 'Cost Optimization',
+              title: '25-30% Reduction in Total Operating Costs',
+              videoUrl: '/videos/automation-slide-place-transfer-machine-2025-12-17-20-51-15-utc.mp4',
+              href: '/architecture',
+            },
+            {
+              introTitle: 'Real-Time Control',
+              title: 'Sub-100ms Response Times for Critical Operations',
+              videoUrl: '/videos/cosmetic-industry-the-process-of-mascara-productio-2025-12-17-13-22-56-utc.mp4',
+              href: '/architecture',
+            },
+          ]}
+        />
+      </section>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32">
@@ -117,11 +173,43 @@ export default function Home() {
             {/* Content */}
             <div className="space-y-8">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-text-primary leading-tight">
-                Calterio Logic: Visual PLC Programming for Modern Factories
+                Factory Operating System for Modern Manufacturing
               </h1>
               <p className="text-xl md:text-2xl text-text-secondary leading-relaxed max-w-2xl">
-                Factory Operating System with deterministic control, unified data management, and intelligent analytics. Transform manufacturing operations through real-time control and AI-powered insights.
+                Transform manufacturing operations through real-time control, unified data management, and AI-powered insights. Reduce downtime by 40%, lower costs by 25-30%, and achieve operational excellence.
               </p>
+              
+              {/* Key Value Props */}
+              <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="flex items-center gap-3">
+                  <Icon icon="mdi:trending-up" className="text-2xl text-calterio-orange" />
+                  <div>
+                    <div className="text-2xl font-semibold text-text-primary">40%</div>
+                    <div className="text-sm text-text-secondary">Downtime Reduction</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="mdi:currency-usd" className="text-2xl text-calterio-orange" />
+                  <div>
+                    <div className="text-2xl font-semibold text-text-primary">25-30%</div>
+                    <div className="text-sm text-text-secondary">Cost Reduction</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="mdi:lightning-bolt" className="text-2xl text-calterio-orange" />
+                  <div>
+                    <div className="text-2xl font-semibold text-text-primary">&lt;100ms</div>
+                    <div className="text-sm text-text-secondary">Real-Time Control</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="mdi:link-variant" className="text-2xl text-calterio-orange" />
+                  <div>
+                    <div className="text-2xl font-semibold text-text-primary">Universal</div>
+                    <div className="text-sm text-text-secondary">Integration</div>
+                  </div>
+                </div>
+              </div>
               
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -144,112 +232,90 @@ export default function Home() {
             {/* Architecture Visual */}
             <div className="relative">
               <div className="w-full bg-surface border border-border-default rounded-md p-4">
-                <FOSArchitecture highlight={['uns', 'event', 'edgeruntime']} />
+                <FOSArchitecture highlight={['uns', 'event', 'edgeruntime', 'intelligence']} />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What Calterio Orchestrates */}
+      {/* Core Capabilities */}
       <section className="section-padding bg-surface">
         <div className="container mx-auto px-4">
           <SectionHeading
-            title="What Calterio Orchestrates"
-            subtitle="Platform Components"
+            title="Core Capabilities"
+            subtitle="Transform Your Factory Operations"
             variant="cs-style1 text-center"
           />
           <Spacing lg="90" md="45" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {calterioComponents.map((component, index) => (
+            {capabilities.map((capability, index) => (
               <SystemCard
                 key={index}
-                title={component.title}
-                description={component.description}
-                iconName={component.iconName}
-                link={component.link}
+                title={capability.title}
+                description={capability.description}
+                iconName={capability.iconName}
+                link={capability.link}
               />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Logic Editor Features */}
+      {/* Business Benefits */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading
-            title="Logic Editor Features"
-            subtitle="Visual PLC Programming"
-            variant="cs-style1"
+            title="Business Benefits"
+            subtitle="Proven Results for Decision Makers"
+            variant="cs-style1 text-center"
           />
           <Spacing lg="90" md="45" />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <FlowTimeline
-              steps={logicEditorSteps.map(step => ({
-                title: step.title,
-                description: step.description,
-                icon: step.icon,
-              }))}
-              flowType="linear"
-            />
-            <div className="bg-surface border border-border-default rounded-md p-6">
-              <LogicEditorFlow activeStep="ladder" />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-surface border border-border-default rounded-md p-6">
+                <h3 className="text-2xl font-semibold text-text-primary mb-6 flex items-center gap-2">
+                  <Icon icon="mdi:chart-line" className="text-calterio-orange" />
+                  {benefit.category}
+                </h3>
+                <div className="space-y-4">
+                  {benefit.items.map((item, itemIndex) => (
+                    <div key={itemIndex} className="flex items-start gap-3">
+                      <div className="text-3xl font-bold text-calterio-orange min-w-[80px]">
+                        {item.metric}
+                      </div>
+                      <div className="text-text-secondary pt-1">
+                        {item.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Use Cases Section */}
+      {/* Key Features */}
       <section className="section-padding bg-surface">
         <div className="container mx-auto px-4">
           <SectionHeading
-            title="Use Cases"
-            subtitle="Industry Solutions"
+            title="Key Features"
+            subtitle="Comprehensive Factory Operating System"
             variant="cs-style1 text-center"
-            btnText="View All Use Cases"
-            btnLink="/use-cases"
           />
           <Spacing lg="90" md="45" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: 'Predictive Maintenance', industry: 'Pharmaceutical', link: '/use-cases/predictive-maintenance-pharmaceutical' },
-              { title: 'Quality Control', industry: 'Automotive', link: '/use-cases/quality-control-pharmaceutical' },
-              { title: 'Energy Optimization', industry: 'Textile', link: '/use-cases/energy-optimization-textile' },
-              { title: 'Production Optimization', industry: 'Electronics', link: '/use-cases/production-optimization-electronics' },
-            ].map((useCase, index) => (
+            {features.map((feature, index) => (
               <SystemCard
                 key={index}
-                title={useCase.title}
-                description={`${useCase.industry} manufacturing solutions`}
-                iconName="mdi:application"
-                link={useCase.link}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Metrics Section */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            title="Performance Metrics"
-            subtitle="Proven Results"
-            variant="cs-style1 text-center"
-          />
-          <Spacing lg="90" md="45" />
-          
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-            {metrics.map((metric, index) => (
-              <MetricBadge
-                key={index}
-                value={metric.value}
-                label={metric.label}
-                accent={metric.accent}
-                size="md"
+                title={feature.title}
+                description={feature.description}
+                iconName={feature.iconName}
+                link={feature.link}
               />
             ))}
           </div>
@@ -257,21 +323,21 @@ export default function Home() {
       </section>
 
       {/* Integrations Grid */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-background">
         <div className="container mx-auto px-4">
           <IntegrationGrid
             integrations={integrations}
-            title="Universal Integration"
+            title="Universal Integration - Connect Any Device, Protocol, or System"
           />
         </div>
       </section>
 
       {/* Architecture Preview */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-surface">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="System Architecture"
-            subtitle="Platform Overview"
+            subtitle="Cloud Orchestration with Edge Execution"
             variant="cs-style1"
             btnText="View Full Architecture"
             btnLink="/architecture"
@@ -280,22 +346,22 @@ export default function Home() {
           
           <ArchitectureBlock
             title="Calterio FOS Logical Architecture"
-            description="Comprehensive Factory Operating System with cloud orchestration and edge execution"
-            diagram={<FOSArchitecture highlight={['uns', 'event', 'workflow', 'intelligence']} />}
-            highlight={['UNS Engine', 'Event Broker', 'Workflow Engine', 'Factory Intelligence']}
+            description="Comprehensive Factory Operating System with cloud orchestration, edge execution, unified namespace, and factory intelligence"
+            diagram={<FOSArchitecture highlight={['uns', 'event', 'workflow', 'intelligence', 'scada']} />}
+            highlight={['UNS Engine', 'Event Broker', 'Workflow Engine', 'Factory Intelligence', 'SCADA System']}
           />
         </div>
       </section>
 
       {/* Demo Section */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-background">
         <div className="container mx-auto px-4">
-          <div className="bg-background border border-border-default rounded-md p-12 text-center">
+          <div className="bg-surface border border-border-default rounded-md p-12 text-center">
             <h2 className="text-4xl font-semibold text-text-primary mb-4">
-              See Calterio Logic in Action
+              See Calterio Platform in Action
             </h2>
             <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-              Experience the power of visual PLC programming and factory orchestration with a personalized demonstration.
+              Experience how Calterio transforms manufacturing operations. Schedule a personalized demonstration tailored to your industry and use cases.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -318,4 +384,3 @@ export default function Home() {
     </>
   );
 }
-
