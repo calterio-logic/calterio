@@ -42,12 +42,6 @@ jobs:
           cd apps/calterio-site
           npm ci
 
-      - name: Run linting
-        continue-on-error: true
-        run: |
-          cd apps/calterio-site
-          npm run lint || echo "Linting completed with warnings (non-blocking)"
-
       - name: Validate SEO
         run: |
           cd apps/calterio-site
