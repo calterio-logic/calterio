@@ -7,7 +7,7 @@ import SocialWidget from "@/app/ui/Widget/SocialWidget"
 const imgUrl = '/images/calterio-main-logo.png'
 import Image from "next/image"
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ teamDetailsId: string }[]> {
   return [];
 }
 

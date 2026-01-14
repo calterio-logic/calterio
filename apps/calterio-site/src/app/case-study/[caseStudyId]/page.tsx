@@ -7,7 +7,7 @@ import Image from "next/image";
 // Using placeholder image - replace with actual image when available
 const imgUrl = '/images/calterio-main-logo.png'
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ caseStudyId: string }[]> {
   return [];
 }
 
